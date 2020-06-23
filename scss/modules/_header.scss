@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap');
+
+
+.grid {
+  display: grid;
+  height: 100vh;
+  font-family: 'Nanum Brush Script', cursive, sans-serif;
+  font-size: 40px;
+  grid-template-areas:
+    "header header header"
+    "sidebar leftBlock rightBlock"
+    "sidebar main main"
+    "footer footer footer";
+    grid-template-rows: 100px 1fr 2fr 100px;
+  grid-template-columns: 300px 1fr 1fr;
+}
+
+.header {
+  display: grid;
+  grid-area: header;
+  background: #dbd6d6;
+  padding: 6px 25px;
+  grid-template-columns: 100px 200px 1fr 200px;
+  gap: 25px;
+  border: 1.5px solid #aa9f8b;
+
+  &__item {
+    background: #991503;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &--right {
+      grid-column: 4;
+    }
+    
+  }
+}
+
+.sidebar {
+  display: grid;
+  grid-area: sidebar;
+  grid-template-rows: 1fr 2fr 6fr;
+  background:#c5bdbd;
+  padding: 20px;
+  gap: 20px;
+  border: 1px solid gray;
+
+  &__item {
+    border: 1px solid gray;
+    background-color: #ebdfa5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.leftBlock {
+  display: grid;
+  grid-area: leftBlock;
+  grid-template-rows: repeat(12, 1fr);
+  grid-template-columns: repeat(25, 1fr);
+  background:#e0dfd6;
+  padding: 20px;
+  gap: 5px;
+  border: 1px solid gray;
+
+  &__item {
+    background-color: black;
+  }
+}
+
+.rightBlock {
+  grid-area: rightBlock;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:#afac9f;
+  border: 1px solid rgb(138, 136, 136);
+}
+
+.main {
+  grid-area: main;
+  background:#decece;
+  padding: 30px;
+  border: 1px solid gray;
+  display: grid;
+  grid-template-rows: repeat(5, 1fr) 10px;
+  grid-template-columns: repeat(4, 1fr 2fr);
+  gap: 10px;
+
+  &__item {
+    background-color: #8becd6;
+    border: 1px solid gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--green {
+      grid-area: 3/5/3/8;
+      background-color: #126b56;
+    }
+
+    &--long {
+      grid-area: 6/1/6/9;
+    }
+  }
+}
+
+.footer {
+  grid-area: footer;
+  background: #dbd6d6;
+  height: 100px;
+  border: 1px solid gray;
+}
